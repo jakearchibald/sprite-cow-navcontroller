@@ -7,6 +7,10 @@ app.get('/', function(req, res){
   res.sendfile('www/index.html');
 });
 
+app.get('/humans.txt', function(req, res){
+  res.sendfile('www/humans.txt');
+});
+
 app.listen(3000);
 
 exports = app;

@@ -11,45 +11,27 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     meta: {
       jsfiles: [
-        'www/static/js/main.js'
+        'www/static/js/jquery-1.7.1.js',
+        'www/static/js/jquery.easing.js',
+        'www/static/js/jquery.transition.js',
+        'www/static/js/jquery.fileClickjack.js',
+        'www/static/js/intro.js',
+        'www/static/js/MicroEvent.js',
+        'www/static/js/Rect.js',
+        'www/static/js/ImgInput.js',
+        'www/static/js/SpriteCanvas.js',
+        'www/static/js/SpriteCanvasView.js',
+        'www/static/js/InlineEdit.js',
+        'www/static/js/CssOutput.js',
+        'www/static/js/Toolbar.js',
+        'www/static/js/pageLayout.js',
+        'www/static/js/FeatureTest.js',
+        'www/static/js/featureTests.js',
+        'www/static/js/base'
       ]
-    },
-    concat: {
-      options: {
-        separator: '\n;\n'
-      },
-      all: {
-        files: {
-          'www/static/js/all.js': '<%= meta.jsfiles %>'
-        }
-      }
-    },
-    jshint: {
-      all: '<%= meta.jsfiles %>',
-      options: {
-        curly: true,
-        forin: true,
-        immed: true,
-        indent: 2,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        nonew: true,
-        sub: true,
-        undef: true,
-        unused: true,
-        boss: true,
-        eqnull: true,
-        browser: true,
-        devel: true,
-        globals: []
-      }
     },
     uglify: {
       options: {
-        mangle: {
-          except: []
-        },
         sourceMap: 'www/static/js/all.js.map',
         sourceMappingURL: 'all.js.map',
         sourceMapPrefix: 3
@@ -63,15 +45,7 @@ module.exports = function(grunt) {
     sass: {
       dev: {
         options: {
-          lineNumbers: true,
-          debugInfo: true
-        },
-        files: {
-          'www/static/css/all.css': 'www/static/css/all.scss'
-        }
-      },
-      dist: {
-        options: {
+          sourcemap: true,
           style: 'compressed'
         },
         files: {
@@ -100,7 +74,7 @@ module.exports = function(grunt) {
     require('./build-static.js')(done);
   });
 
-  grunt.registerTask('dev', ['concat', 'sass:dev', 'server', 'watch']);
-  grunt.registerTask('build', ['concat', 'uglify', 'sass:dist', 'server', 'buildStatic']);
+  grunt.registerTask('dev', ['sass:dev', 'uglify', 'server', 'watch']);
+  grunt.registerTask('build', ['sass:dev', 'uglify', 'server', 'buildStatic']);
 
 };

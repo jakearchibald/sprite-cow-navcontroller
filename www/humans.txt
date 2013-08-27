@@ -1,0 +1,33 @@
+Peoples
+=======
+
+Jake Archibald  (@jaffathecake)   - Frontend stuffs
+Alfredo Aguirre (@a_alfredo)      - Deploy script mastery
+Phil Hawksworth (@philhawksworth) - Hosting & testing
+Darian Moody    (@djm_)           - Pestering me to launch this
+Stephen Waller  (@bruised_blood)  - Brilliant logo
+
+Thankings
+=========
+
+The Canadian weather for bringing out a red flag during the F1 race,
+it was a perfect moment to start developing this.
+
+theTeam, who is paying for hosting. Hosted on S3, which is why the url's
+www.spritecow.com rather than just spritecow.com, can't do a cname for that :(
+
+The 08:03 Southern service from Haywards Heath to London Bridge for always
+having a table seat, where the majority of this was developed.
+
+                                            _
+                                           <88
+                                            Y8b
+     do.      d8b                           `88
+     Y88b.   d888b                 ___       88[
+     d8PY88. d8PY8b    ,88888o.   888888b.   d8b
+     Y8b `8888b  Y8b   88'''Y88. d8P  '`88.   "
+     `88.  Y88'  Y88  d8P    88[ `88.  ,d88    __
+      88[   '    `88. Y88ooo88P   `Y8888P"    Y88
+      88[         Y8b  ``YPPP'      '`"'
+      88[         `88
+      YP           `
