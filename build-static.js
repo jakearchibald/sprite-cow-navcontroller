@@ -1,13 +1,13 @@
 // All the files needed for the static version
 var manifest = [
-  '/',
-  '/static/js/all.js',
-  '/static/js/controller.js',
-  '/static/css/all.css',
-  '/static/css/fonts/oswald.ttf',
-  '/static/css/imgs/sprites1.png',
-  '/static/tutorial-sprite.png',
-  '/static/favicon.ico'
+  '/sprite-cow-navcontroller/',
+  '/sprite-cow-navcontroller/static/js/all.js',
+  '/sprite-cow-navcontroller/static/js/controller.js',
+  '/sprite-cow-navcontroller/static/css/all.css',
+  '/sprite-cow-navcontroller/static/css/fonts/oswald.ttf',
+  '/sprite-cow-navcontroller/static/css/imgs/sprites1.png',
+  '/sprite-cow-navcontroller/static/tutorial-sprite.png',
+  '/sprite-cow-navcontroller/static/favicon.ico'
 ];
 var server = 'http://localhost:3000';
 
@@ -58,7 +58,7 @@ module.exports = function(done) {
   );
 
   var promises = manifest.map(function(urlPath) {
-    var pathParts = urlPath.split('/').slice(1);
+    var pathParts = urlPath.split('/').slice(2);
     var fileName = pathParts[pathParts.length - 1] || 'index.html';
     var dir = pathParts.slice(0, -1).join('/');
     var deferred = new Q.defer();

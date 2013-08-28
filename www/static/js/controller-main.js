@@ -3,13 +3,13 @@ this.caches = new CacheList();
 
 
 caches.set('core', new Cache('core',
-  '/',
-  '/static/js/all.js',
-  '/static/css/all.css',
-  '/static/css/fonts/oswald.ttf',
-  '/static/css/imgs/sprites1.png',
-  '/static/tutorial-sprite.png',
-  '/static/favicon.ico'
+  '/sprite-cow-navcontroller/',
+  '/sprite-cow-navcontroller/static/js/all.js',
+  '/sprite-cow-navcontroller/static/css/all.css',
+  '/sprite-cow-navcontroller/static/css/fonts/oswald.ttf',
+  '/sprite-cow-navcontroller/static/css/imgs/sprites1.png',
+  '/sprite-cow-navcontroller/static/tutorial-sprite.png',
+  '/sprite-cow-navcontroller/static/favicon.ico'
 ));
 
 this.addEventListener('fetch', function(event) {
