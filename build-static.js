@@ -1,6 +1,13 @@
 // All the files needed for the static version
 var manifest = [
-  // urls go here
+  '/',
+  '/static/js/all.js',
+  '/static/js/controller.js',
+  '/static/css/all.css',
+  '/static/css/fonts/oswald.ttf',
+  '/static/css/imgs/sprites1.png',
+  '/static/tutorial-sprite.png',
+  '/static/favicon.ico'
 ];
 var server = 'http://localhost:3000';
 

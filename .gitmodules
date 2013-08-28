@@ -1,3 +1,6 @@
 [submodule "www/static/js/navcontroller-polyfills"]
 	path = www/static/js/navcontroller-polyfills
 	url = git@github.com:alecf/navcontroller-polyfills.git
+[submodule "build"]
+	path = build
+	url = git@github.com:jakearchibald/sprite-cow-navcontroller.git
