@@ -27,18 +27,35 @@ module.exports = function(grunt) {
         'www/static/js/pageLayout.js',
         'www/static/js/FeatureTest.js',
         'www/static/js/featureTests.js',
-        'www/static/js/base'
+        'www/static/js/base.js'
+      ],
+      controllerFiles: [
+        'www/static/js/navcontroller-polyfills/url.js',
+        'www/static/js/navcontroller-polyfills/fetch.js',
+        'www/static/js/navcontroller-polyfills/cache.js',
+        'www/static/js/controller-main.js'
       ]
     },
     uglify: {
+      all: {
+        options: {
+          sourceMap: function(path) {
+            return path + '.map';
+          },
+          sourceMapPrefix: 3
+        },
+        files: {
+          'www/static/js/all.js': '<%= meta.jsfiles %>'
+        }
+      }
+    },
+    concat: {
       options: {
-        sourceMap: 'www/static/js/all.js.map',
-        sourceMappingURL: 'all.js.map',
-        sourceMapPrefix: 3
+        separator: '\n;\n'
       },
       all: {
         files: {
-          'www/static/js/all.js': '<%= meta.jsfiles %>'
+          'www/static/js/controller.js': '<%= meta.controllerFiles %>'
         }
       }
     },
@@ -56,6 +73,10 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: '<%= meta.jsfiles %>',
+        tasks: ['uglify']
+      },
+      controller: {
+        files: '<%= meta.controllerFiles %>',
         tasks: ['concat']
       },
       styles: {
@@ -74,7 +95,7 @@ module.exports = function(grunt) {
     require('./build-static.js')(done);
   });
 
-  grunt.registerTask('dev', ['sass:dev', 'uglify', 'server', 'watch']);
-  grunt.registerTask('build', ['sass:dev', 'uglify', 'server', 'buildStatic']);
+  grunt.registerTask('dev', ['sass:dev', 'uglify', 'concat', 'server', 'watch']);
+  grunt.registerTask('build', ['sass:dev', 'uglify', 'concat', 'server', 'buildStatic']);
 
 };

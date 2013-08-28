@@ -1,5 +1,6 @@
 node_modules
 www/static/js/all.js
+www/static/js/controller.js
 .sass-cache
 www/static/css/all.css
 build

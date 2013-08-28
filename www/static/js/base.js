@@ -124,4 +124,6 @@
 			event.preventDefault();
 		});
 	})();
+
+	navigator.registerController("/*", "/www/static/js/controller.js");
 })(spriteCow);
