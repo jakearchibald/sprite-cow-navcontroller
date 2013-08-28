@@ -42,7 +42,9 @@ module.exports = function(grunt) {
           sourceMap: function(path) {
             return path + '.map';
           },
-          sourceMapPrefix: 3
+          sourceMappingURL: function(path) {
+            return path.slice(3);
+          }
         },
         files: {
           'www/static/js/all.js': '<%= meta.jsfiles %>'
