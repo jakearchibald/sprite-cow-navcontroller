@@ -125,5 +125,5 @@
 		});
 	})();
 
-	navigator.registerController("/*", "/www/static/js/controller.js");
+	navigator.registerController("/*", "/static/js/controller.js");
 })(spriteCow);
